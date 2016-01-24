@@ -1,0 +1,134 @@
+﻿@model VideoWeb.Video
+@{
+    ViewBag.Title = "Video";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<div class="col-xs-6">
+    @using (Html.BeginForm())
+    {
+        <div class="div-center-push">
+            <h4 class="text-center tp-bt-mr">Video Playing</h4>
+            <div id="jp_container_1" class="jp-video " role="application" aria-label="media player">
+                <div class="jp-type-single">
+                    <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+                    <div class="jp-gui">
+                        <div class="jp-video-play">
+                            <button class="jp-video-play-icon" role="button" tabindex="0">play</button>
+                        </div>
+                        <div class="jp-interface">
+                            <div class="jp-progress">
+                                <div class="jp-seek-bar">
+                                    <div class="jp-play-bar"></div>
+                                </div>
+                            </div>
+                            <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+                            <div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+                            <div class="jp-details">
+                                <div class="jp-title" aria-label="title">&nbsp;</div>
+                            </div>
+                            <div class="jp-controls-holder">
+                                <div class="jp-volume-controls">
+                                    <button class="jp-mute" role="button" tabindex="0">mute</button>
+                                    <button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+                                    <div class="jp-volume-bar">
+                                        <div class="jp-volume-bar-value"></div>
+                                    </div>
+                                </div>
+                                <div class="jp-controls">
+                                    <button class="jp-play" role="button" tabindex="0">play</button>
+                                    <button class="jp-stop" role="button" tabindex="0">stop</button>
+                                </div>
+                                <div class="jp-toggles">
+                                    <button class="jp-repeat" role="button" tabindex="0">repeat</button>
+                                    <button class="jp-full-screen" role="button" tabindex="0">full screen</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="jp-no-solution">
+                        <span>Update Required</span>
+                        To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    @using (Html.BeginForm("AddComment", "Home", FormMethod.Post))
+    {
+        <div class="div-center-push div-mar-to">
+            <input name="videoId" type="hidden" value="@Model.Id" />
+            <div class="form-group col-xs-12">
+                <textarea type="text" class="form-control" name="message" id="Message" placeholder="some comment on video"></textarea>
+            </div>
+            <div class="form-group col-xs-6">
+                <input type="text" class="form-control" name="name" id="Name" placeholder="your name" />
+            </div>
+            <div class="form-group col-xs-6">
+                <input type="email" class="form-control" name="email" id="Email" placeholder="email@some.com" />
+            </div>
+            <div class="form-group col-xs-6">
+                <input type="text" class="form-control" name="startTime" id="StartTime" placeholder="starts? mm:ss" />
+            </div>
+            <div class="form-group col-xs-6">
+                <input type="text" class="form-control" name="endTime" id="EndTime" placeholder="ends? mm:ss" />
+            </div>
+            <div class="col-md-6 col-md-offset-3">
+                <input type="submit" value="Add Comment" class="btn btn-default btn-width" />
+            </div>
+            @ViewBag.Message
+
+        </div>
+    }
+</div>
+<div class="col-xs-6">
+    @using (Html.BeginForm())
+    {
+        <div class="btn btn-default">@Html.ActionLink("Home", "Index")</div>
+        if (Model.Comments != null)
+        {
+            <h4 class="text-center tp-bt-mr">Comments</h4>
+            foreach (var item in Model.Comments)
+            {
+                <div class="col-xs-3 div-res-3 div-com">
+                    <p class="col-xs-12">@Html.DisplayName(item.Name)</p>
+                    <div class="div-com-con col-xs-12">@Html.DisplayName(item.Message)</div>
+                    <div>
+                        <p class="col-xs-4">@Html.DisplayName(item.StartTime)</p>
+                        <span class="col-xs-4 text-center">-</span>
+                        <p class="col-xs-4 text-center">@Html.DisplayName(item.EndTime)</p>
+                    </div>
+                </div>
+            }
+        }
+    }
+</div>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+<link type="text/css" rel="stylesheet" href="~/Skin/jplayer.pink.flag.css" />
+<link type="text/css" href="~/Content/site.css" rel="stylesheet" />
+<script type="text/javascript" src="~/Scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.jplayer.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+      $("#jquery_jplayer_1").jPlayer({
+        ready: function () {
+          $(this).jPlayer("setMedia", {
+            title: "@Model.Description",
+            m4v: "@Model.Url",
+            ogv: "@Model.Url"
+          });
+        },
+        cssSelectorAncestor: "#jp_container_1",
+        swfPath: "/js",
+        supplied: "m4v, ogv",
+        useStateClassSkin: true,
+        autoBlur: false,
+        smoothPlayBar: true,
+        keyEnabled: true,
+        remainingDuration: true,
+        toggleDuration: true
+      });
+    });
+</script>

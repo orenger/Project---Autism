@@ -1,0 +1,80 @@
+﻿body {
+}
+.input-fixed{
+    width:20%;
+}
+
+.center-div{
+    margin:0 auto;
+}
+
+.col-centered {
+    float:none;
+    margin:0 auto;
+}
+
+.input-width{
+    width:40%;
+    margin:0 auto;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.div-res-3{
+    float:left;
+    width: 30%;
+    padding-bottom: 10%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    background-color: #f8f8f8;
+}
+
+.btn-del-vid{
+    position: absolute;
+    right:    0;
+    bottom:   0;
+}
+
+a{
+    text-decoration:none;
+    color:black;
+    font-weight:300;
+}
+
+.div-center-push{
+    margin:0 0 0 25%;
+}
+
+.div-mar-to{
+    margin-top:15px;
+}
+.btn-width{
+    width:100% ;
+}
+.div-com{
+    background-color: #fff;
+}
+.div-com-con{
+    border:1px solid #e2e2e2;
+    background-color: #fff;
+}
+.tp-bt-mr{
+    margin:20px 0;
+}

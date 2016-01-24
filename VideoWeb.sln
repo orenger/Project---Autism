@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoWeb", "VideoWeb\VideoWeb.csproj", "{3486422F-D9ED-48BB-9DB0-353658852C0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoWeb.Tests", "VideoWeb.Tests\VideoWeb.Tests.csproj", "{8607EEEB-75B9-4B3F-A75D-B6895F5F3A64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3486422F-D9ED-48BB-9DB0-353658852C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3486422F-D9ED-48BB-9DB0-353658852C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3486422F-D9ED-48BB-9DB0-353658852C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3486422F-D9ED-48BB-9DB0-353658852C0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8607EEEB-75B9-4B3F-A75D-B6895F5F3A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8607EEEB-75B9-4B3F-A75D-B6895F5F3A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8607EEEB-75B9-4B3F-A75D-B6895F5F3A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8607EEEB-75B9-4B3F-A75D-B6895F5F3A64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
