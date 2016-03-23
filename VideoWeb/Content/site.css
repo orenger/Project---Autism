@@ -1,80 +1,208 @@
 ﻿body {
 }
-.input-fixed{
-    width:20%;
+
+.input-fixed {
+    width: 20%;
 }
 
-.center-div{
-    margin:0 auto;
+.center-div {
+    margin: 0 auto;
 }
 
 .col-centered {
-    float:none;
-    margin:0 auto;
+    float: none;
+    margin: 0 auto;
 }
 
-.input-width{
-    width:40%;
-    margin:0 auto;
+.input-width {
+    width: 25%;
+    margin: 20px auto;
+    color: black;
 }
 
 .btn-file {
     position: relative;
     overflow: hidden;
 }
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
+
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+
+.btn-top-right{
+    top:0;
+    right:0;
+    float:right;
+    position:relative;
 }
 
-.div-res-3{
-    float:left;
+.div-padding{
+    margin:15px 0;
+}
+.div-in-3{
+    border:4px solid black;
+    width:100%;
+}
+
+.border-bottom{
+    border-bottom:1px solid #e2e2e2;
+}
+.padding-5{
+    padding-left:5px;
+}
+.div-res-3 {
+    float: left;
     width: 30%;
     padding-bottom: 10%; /* = width for a 1:1 aspect ratio */
-    margin:1.66%;
-    background-color: #f8f8f8;
+    margin: 1.66%;
+    border-radius: 10px;
 }
 
-.btn-del-vid{
+.btn-del-vid {
     position: absolute;
-    right:    0;
-    bottom:   0;
+    right: 0;
+    bottom: 0;
 }
 
-a{
-    text-decoration:none;
-    color:black;
-    font-weight:300;
+.jp-top-im{
+   
+    height: 700px;
 }
 
-.div-center-push{
-    margin:0 0 0 25%;
+.jp-p-center {
+     position:center;
+    width: 600px;
+    height: 100%;
+    margin-left:170px;
+    border: 1px solid #e2e2e2
 }
 
-.div-mar-to{
-    margin-top:15px;
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
 }
-.btn-width{
-    width:100% ;
+
+.div-center-push {
+    margin: 0 0 0 25%;
+    width: 100%;
+    height: 100%;
 }
-.div-com{
+
+.div-mar-to {
+    margin-top: 15px;
+    width: 50%;
+    height: 50%;
+
+}
+
+.btn-width {
+    width: 100%;
+}
+
+.div-com {
     background-color: #fff;
 }
-.div-com-con{
-    border:1px solid #e2e2e2;
+
+.div-com-con {
+    border: 1px solid #e2e2e2;
     background-color: #fff;
 }
-.tp-bt-mr{
-    margin:20px 0;
+
+.div-col-con-x {
+    border: 1px solid #e2e2e2;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    height: 220px; 
+    width: 284px;
+}
+
+.tp-bt-mr {
+    margin: 20px 0;
+}
+
+.div-comment{
+    margin:20px auto;
+    border-radius:10px;
+    width:70%;
+}
+
+.bg-image {
+    background-image: url('Images/women_and_nature (4).jpg');
+    background-repeat: no-repeat;
+    margin: 0 0 0 0;
+    opacity: 0.65;
+    background-size: 100% 100%;
+}
+
+.bg-image-vid {
+    display: block; 
+    height: 140px; 
+    background-image: url('Images/play.png');
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    background-size: 100% 100%;
+}
+
+input#file {
+    display: inline-block;
+    width: 25%;
+    padding: 35px 0 0 0;
+    height: 30px;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-size: 150px 100px;
+}
+
+.row-box {
+    background-color: rgba(3, 59, 99, 0.07);
+}
+
+.box-in-div { 
+    height: 120px; 
+}
+
+.play {
+    width: 12px;
+    height: 16px;
+    border-top: 8px solid transparent;
+    border-left: 12px solid #000;
+    border-bottom: 8px solid transparent;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #000;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #000;
+    opacity: 1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #000;
+    opacity: 1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #000;
+}
+
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+    color: #000;
 }

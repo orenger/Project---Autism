@@ -4,17 +4,18 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/_Layout.cshtml";
 }
-<div class="col-xs-6">
+<div class="row bg-image" style="min-height:500px;">
     <h4 class="text-center tp-bt-mr">Upload Video</h4>
     <div class="center-div col-centered text-center">
         <p>
             @using (Html.BeginForm("Index", "Home", FormMethod.Post,
                             new { enctype = "multipart/form-data" }))
             {
-                <input type="file" name="file" id="file" class="form-control input-width btn btn-file btn-default"  /><br><br>
-                <input type="text" name="name" id="Name" class="form-control input-width" placeholder="Your Name"/> <br />
-                <input type="text" name="description" id="Description" class="form-control input-width" placeholder="Video Description"/> <br />
-                <input type="submit" value="Upload video" class="btn btn-default"/>
+                <input type="file" name="file" id="file" class="hidden" />
+                <label for="file" class="form-control input-width btn-primary">@ViewBag.choseFile</label>
+                <input type="text" name="name" id="Name" class="form-control input-width" placeholder="Your Name" />
+                <input type="text" name="description" id="Description" class="form-control input-width" placeholder="Video Description" />
+                <input type="submit" value="Upload video" class="btn btn-primary" />
                 <br><br>
                 @ViewBag.Message
             }
@@ -22,25 +23,28 @@
         </p>
     </div>
 </div>
-<div class="col-xs-6">
-    <h4 class="text-center tp-bt-mr">Videos</h4>
-    <div >
-        @foreach (var item in Model)
-        {
-            <div class="col-xs-3 div-res-3">
-                <p class="text-center">@Html.DisplayFor(modelItem => item.Description)</p><br />
-                <p class="text-center">@Html.DisplayFor(modelItem => item.Name)</p><br />
-                @using (Html.BeginForm("Video", "Home"))
-                {
-                    <div class="text-center text-dec">@Html.ActionLink("Watch", "Video", new { videoId = item.Id })</div>
-                    <div class="btn btn-default btn-del-vid text-dec">
-                        @Html.ActionLink("X", "DeleteVideo", new { confirm = true, _videoId = item.Id },
-                        new { onclick = "return confirm('Do you really want to delete this Video?')" }) 
-                    </div>
-                }
-            </div>         
-        }
-    </div>
+<h4 class="text-center tp-bt-mr">Videos</h4>
+<div class="container">
+    @foreach (var item in Model)
+            {
+        <div class="col-xs-4 div-padding">
+            <div class="div-in-3">
+                <div class="btn btn-danger btn-top-right">
+                    @Html.ActionLink("X", "DeleteVideo", new { confirm = true, _videoId = item.Id },
+                                new { onclick = "return confirm('Do you really want to delete this Video?')" })
+                </div>
+                <h4 class="text-left padding-5">@Html.DisplayFor(modelItem => item.Description)</h4>
+                <h6 class="text-left padding-5 border-bottom">@Html.DisplayFor(modelItem => item.Name)</h6>
+                <div class="box-in-div ">
+                    @using (Html.BeginForm("Video", "Home"))
+                    {
+                        @Html.ActionLink(" ", "Video", new { videoId = item.Id }, new { @class = "bg-image-vid" })
+
+                    }
+                </div>
+            </div>
+        </div>
+    }
 </div>
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">

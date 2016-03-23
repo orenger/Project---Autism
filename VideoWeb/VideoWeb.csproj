@@ -152,6 +152,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\play.png" />
+    <Content Include="Content\Images\women_and_nature %284%29.jpg" />
     <Content Include="Content\site.css" />
     <Content Include="Content\video-js.css" />
     <Content Include="Content\video-js.min.css" />

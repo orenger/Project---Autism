@@ -29,8 +29,8 @@ namespace VideoWeb {
 
         [HttpPost, OutputCache(NoStore = true, Duration =1)]
         public async Task<ActionResult> Index(HttpPostedFileBase file, string name, string description)
-        {                       
-
+        {
+            ViewBag.choseFile = "choose a file";
             if (file != null && file.ContentLength > 0)
                 try
                 {
@@ -48,6 +48,7 @@ namespace VideoWeb {
                     vid.Description = description;
                     vid.Name = name;
                     videos.AddVideoToDB(vid.Url, vid.Name, vid.Description);
+                    ViewBag.choseFile = file.FileName;
                     ViewBag.Message = "File uploaded successfully";
                 }
                 catch (Exception ex)
